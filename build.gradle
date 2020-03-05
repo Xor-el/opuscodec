@@ -70,10 +70,6 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 }
 
 task classesJar(type: Jar) {
-    from "$buildDir/intermediates/classes/release"
-}
-
-task AllInter(type: Jar) {
     from "$buildDir/intermediates"
 }
 
@@ -81,7 +77,6 @@ artifacts {
     archives classesJar
     archives javadocJar
     archives sourcesJar
-    archives AllInter
 }
 
 // uncomment to build a jar file in addition to the default aar file
