@@ -13,7 +13,7 @@ buildscript {
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
-group='com.github.martoreto'
+group='com.github.Xor-el'
 
 android {
     compileSdkVersion 25
