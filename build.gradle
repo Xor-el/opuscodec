@@ -73,18 +73,23 @@ task classesJar(type: Jar) {
     from "$buildDir/intermediates/classes/release"
 }
 
+task AllInter(type: Jar) {
+    from "$buildDir/intermediates"
+}
+
 artifacts {
     archives classesJar
     archives javadocJar
     archives sourcesJar
+    archives AllInter
 }
 
 // uncomment to build a jar file in addition to the default aar file
-android.libraryVariants.all { variant ->
-    def name = variant.buildType.name
-    def task = project.tasks.create "jar${name.capitalize()}", Jar
-    task.dependsOn variant.javaCompile
-    task.from variant.javaCompile.destinationDir
-    artifacts.add('archives', task);
-}
+//android.libraryVariants.all { variant ->
+//    def name = variant.buildType.name
+ //   def task = project.tasks.create "jar${name.capitalize()}", Jar
+ //   task.dependsOn variant.javaCompile
+ //   task.from variant.javaCompile.destinationDir
+ //   artifacts.add('archives', task);
+//}
 
